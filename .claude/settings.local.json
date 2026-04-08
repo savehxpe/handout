@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/run.py auth_manager.py status)",
+      "Bash(rm -rf .venv)",
+      "Bash(/Users/tshepomotolo/.rye/shims/python -m venv .venv)",
+      "Read(//Users/tshepomotolo/.rye/py/cpython@3.12.7/bin/**)",
+      "Bash(~/.claude/skills/notebooklm/.venv/bin/python3 --version)",
+      "Bash(~/.claude/skills/notebooklm/.venv/bin/pip install:*)",
+      "Bash(~/.claude/skills/notebooklm/.venv/bin/python3:*)",
+      "Bash(.venv/bin/python scripts/auth_manager.py setup --timeout 10)",
+      "Bash(.venv/bin/python scripts/notebook_manager.py list)",
+      "Bash(.venv/bin/python scripts/ask_question.py --question \"What is the content of this notebook? What topics are covered? Provide a complete overview briefly and concisely\" --notebook-url \"https://notebooklm.google.com/notebook/41abf617-c41b-428a-bad5-d284e46eb450\")",
+      "Bash(.venv/bin/python scripts/notebook_manager.py add --url https://notebooklm.google.com/notebook/41abf617-c41b-428a-bad5-d284e46eb450 --name 'saveHXPE Platform Blueprint' --description 'Comprehensive playbook for building the saveHXPE platform - covers creator economy D2F models, Web3/NFTs for music, digital marketing/fan engagement, Stripe/Firebase architecture, cybersecurity/bot mitigation, AI/game design, and enterprise systems' --topics creator-economy,music-industry,web3,nfts,stripe,firebase,cybersecurity,digital-marketing,fan-engagement,game-design,AI,saas,platform-architecture)",
+      "Bash(xargs -I {} dirname {})",
+      "Bash(xargs -I {} basename {})",
+      "Bash(.venv/bin/python scripts/ask_question.py --question \"I'm building a cinematic scroll website for the 'Handout Remix ft. Freddie Gibbs' single. I need cryptic, short lore sentences for the saveHXPE / Outworld universe. Give me: 1\\) A single cryptic sentence about the Handout Remix transmission being intercepted \\(mysterious, sci-fi tone\\). 2\\) A single cryptic sentence about unlocking a pre-save archive \\(urgent, classified tone\\). Keep each sentence under 15 words. Use the saveHXPE / Outworld mythology if available.\" --notebook-id \"savehxpe-platform-blueprint\")",
+      "Bash(sips:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --no-import-alias --use-npm)",
+      "Bash(cp -r /tmp/next-init/handout/* \"/Volumes/T7 Shield 1/Outworld Files/sh3d/\")",
+      "Bash(cp -r /tmp/next-init/handout/.gitignore \"/Volumes/T7 Shield 1/Outworld Files/sh3d/\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(rm:*)"
+    ]
+  }
+}

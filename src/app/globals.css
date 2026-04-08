@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-mono: var(--font-mono);
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { display: none; }
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

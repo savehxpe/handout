@@ -15,3 +15,15 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* 3D rotating logo */
+@keyframes spin-y {
+  from { transform: perspective(600px) rotateY(0deg); }
+  to   { transform: perspective(600px) rotateY(360deg); }
+}
+
+.animate-spin-slow-3d {
+  animation: spin-y 6s linear infinite;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}

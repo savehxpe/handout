@@ -29,9 +29,9 @@ function TikTokIcon() {
 }
 
 const socials = [
-  { icon: InstagramIcon, label: "IG", href: "#" },
-  { icon: XIcon, label: "X", href: "#" },
-  { icon: TikTokIcon, label: "TikTok", href: "#" },
+  { icon: InstagramIcon, label: "IG", href: "https://www.instagram.com/savehxpe" },
+  { icon: XIcon, label: "X", href: "https://x.com/savehxpe" },
+  { icon: TikTokIcon, label: "TikTok", href: "https://www.tiktok.com/savehxpe" },
 ];
 
 export default function Depth4Social() {
@@ -47,6 +47,8 @@ export default function Depth4Social() {
           <a
             key={label}
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="pointer-events-auto flex flex-col items-center gap-2 text-white transition-colors duration-200 hover:bg-white hover:text-black p-4"
           >
             <Icon />

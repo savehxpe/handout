@@ -40,9 +40,9 @@ export default function Depth4Social() {
   return (
     <div
       ref={ref}
-      className="absolute inset-x-0 top-0 z-50 flex items-center justify-center pointer-events-none h-auto py-8"
+      className="absolute inset-0 z-50 flex flex-col items-center justify-center pointer-events-none"
     >
-      <div className="pointer-events-auto flex flex-col items-center gap-6 max-w-fit mx-auto">
+      <div className="pointer-events-auto flex flex-col items-center gap-6">
         <p className="font-mono text-sm md:text-base tracking-[0.3em] uppercase text-white font-bold drop-shadow-lg">
           [ ESTABLISH SECURE CONNECTION ]
         </p>

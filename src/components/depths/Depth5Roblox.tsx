@@ -162,6 +162,8 @@ function PostGameCapture({ score }: { score: number }) {
 function EndlessRunner() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const boardRef = useRef<HTMLDivElement>(null);
+  const autoStartedRef = useRef(false);
   const stateRef = useRef({
     playerY: GROUND_Y - PLAYER_SIZE,
     velocityY: 0,
@@ -311,10 +313,27 @@ function EndlessRunner() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [jump]);
 
+  // Auto-start: trigger first jump when game scrolls into view
+  useEffect(() => {
+    const el = boardRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !autoStartedRef.current) {
+          autoStartedRef.current = true;
+          jump();
+        }
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [jump]);
+
   return (
     <div className="flex flex-col items-center gap-2">
       {/* Solid bg container for legibility */}
-      <div className="bg-black p-6 border border-white/30">
+      <div ref={boardRef} className="bg-black p-6 border border-white/30 pointer-events-auto">
         {/* Score + hint bar */}
         <div className="flex justify-between w-full max-w-[480px] px-1 mb-2">
           <span className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg">
@@ -380,7 +399,7 @@ export default function Depth5Roblox() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-[60] flex flex-col items-center justify-center text-center px-4 gap-4 mt-12 md:mt-24 pointer-events-auto"
+      className="absolute inset-0 z-[60] flex flex-col items-center justify-center text-center px-4 gap-4 pointer-events-none"
       style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
     >
       <p className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-white max-w-md drop-shadow-md">

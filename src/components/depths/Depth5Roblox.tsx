@@ -17,7 +17,7 @@ const OBSTACLE_H_MIN = 24;
 const OBSTACLE_H_VAR = 14;
 const GRAVITY = 0.6;
 const JUMP_FORCE = -10;
-const BASE_SPEED = 3.5;
+const BASE_SPEED = 4.9; // 3.5 * 1.4 = 40% faster
 
 // ── Leaderboard entry type ──
 interface LeaderEntry {
@@ -51,10 +51,10 @@ function Leaderboard() {
   if (entries.length === 0) {
     return (
       <div className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/30">
+        <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white drop-shadow-md">
           [ TOP 5 LEADERBOARD ]
         </span>
-        <span className="font-mono text-[10px] text-white/20">
+        <span className="font-mono text-[10px] text-white/60 drop-shadow-md">
           No entries yet
         </span>
       </div>
@@ -63,11 +63,11 @@ function Leaderboard() {
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40">
+      <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white drop-shadow-md">
         [ TOP 5 LEADERBOARD ]
       </span>
       {entries.map((e, i) => (
-        <div key={i} className="flex justify-between gap-6 font-mono text-[10px] text-white/60">
+        <div key={i} className="flex justify-between gap-6 font-mono text-[10px] text-white drop-shadow-md">
           <span>{i + 1}. {e.gameTag}</span>
           <span>{e.score}</span>
         </div>
@@ -225,12 +225,12 @@ function EndlessRunner() {
           s.jumping = false;
         }
 
-        // Dynamic speed: increases with score
-        s.speed = BASE_SPEED + s.score * 0.08;
+        // Dynamic speed: increases with score (tuned for +5 per obstacle)
+        s.speed = BASE_SPEED + s.score * 0.016;
 
         // Spawn obstacles
         s.frameCount++;
-        const spawnRate = Math.max(50, 110 - s.score * 2);
+        const spawnRate = Math.max(50, 110 - s.score * 0.4);
         if (s.frameCount % spawnRate === 0) {
           const h = OBSTACLE_H_MIN + Math.random() * OBSTACLE_H_VAR;
           s.obstacles.push({ x: CANVAS_W, h });
@@ -241,7 +241,7 @@ function EndlessRunner() {
           s.obstacles[i].x -= s.speed;
           if (s.obstacles[i].x + OBSTACLE_W < 0) {
             s.obstacles.splice(i, 1);
-            s.score++;
+            s.score += 5;
             setScore(s.score);
           }
         }
@@ -377,9 +377,10 @@ export default function Depth5Roblox() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-4"
+      className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 gap-4"
+      style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
     >
-      <p className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-white/60 max-w-md">
+      <p className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-white max-w-md drop-shadow-md">
         BLUEPRINT THE GAME, EVERY ROUTE IS A CASH ROUTE
       </p>
       <div className="pointer-events-auto">

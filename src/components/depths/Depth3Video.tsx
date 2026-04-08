@@ -26,13 +26,13 @@ export default function Depth3Video() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 gap-6"
+      className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 gap-6 pointer-events-none"
     >
       <a
         href="https://youtu.be/mX6J6zzARsI?si=F4GTlBlbCUfJo9U0"
         target="_blank"
         rel="noopener noreferrer"
-        className="pointer-events-auto w-full max-w-3xl aspect-video relative block group border border-white/20 overflow-hidden"
+        className="pointer-events-auto relative z-20 mx-auto max-w-3xl w-full aspect-video block group border border-white/20 overflow-hidden"
       >
         <img
           src={thumbnailUrl}

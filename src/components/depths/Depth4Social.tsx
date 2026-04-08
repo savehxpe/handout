@@ -31,7 +31,7 @@ function TikTokIcon() {
 const socials = [
   { icon: InstagramIcon, label: "IG", href: "https://www.instagram.com/savehxpe" },
   { icon: XIcon, label: "X", href: "https://x.com/savehxpe" },
-  { icon: TikTokIcon, label: "TikTok", href: "https://www.tiktok.com/@savehxpe" },
+  { icon: TikTokIcon, label: "TikTok", href: "https://www.tiktok.com/savehxpe" },
 ];
 
 export default function Depth4Social() {
@@ -40,7 +40,7 @@ export default function Depth4Social() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 flex items-center justify-center"
+      className="absolute inset-0 z-30 flex items-center justify-center"
     >
       <div className="flex gap-10 md:gap-16 items-center">
         {socials.map(({ icon: Icon, label, href }) => (

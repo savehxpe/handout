@@ -1,11 +1,25 @@
 import { ZOOM_FACTOR, PARALLAX_STRENGTH } from "./constants";
 
+let lastValidIndex = 0;
+
 export function drawFrame(
   ctx: CanvasRenderingContext2D,
-  image: HTMLImageElement,
+  images: HTMLImageElement[],
+  targetIndex: number,
   canvas: HTMLCanvasElement,
   mouse: { x: number; y: number }
 ) {
+  // Resolve to the target frame if ready, otherwise hold the last valid frame
+  let image = images[targetIndex];
+  if (!image || !image.complete || image.naturalWidth === 0) {
+    image = images[lastValidIndex];
+  } else {
+    lastValidIndex = targetIndex;
+  }
+
+  // Nothing to draw yet
+  if (!image || !image.complete || image.naturalWidth === 0) return;
+
   const cw = canvas.width;
   const ch = canvas.height;
   const iw = image.naturalWidth;

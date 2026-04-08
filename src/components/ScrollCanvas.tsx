@@ -43,9 +43,7 @@ export default function ScrollCanvas({ images }: ScrollCanvasProps) {
     function tick() {
       const imgs = images.current;
       const idx = frameIndex.current;
-      if (imgs.length > 0 && imgs[idx]?.complete) {
-        drawFrame(ctx!, imgs[idx], canvas!, mouse.current);
-      }
+      drawFrame(ctx!, imgs, idx, canvas!, mouse.current);
       rafRef.current = requestAnimationFrame(tick);
     }
 

@@ -37,9 +37,8 @@ yarn-error.log*
 # vercel
 .vercel
 
-# source frame assets (large PNGs, ~12MB each)
+# source frame assets (original PNGs, ~12MB each)
 /122 frames/
-/public/frames/
 
 # typescript
 *.tsbuildinfo

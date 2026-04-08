@@ -28,13 +28,13 @@ export default function TransmissionModal() {
           onClick={() => setVisible(false)}
           className="absolute top-3 right-4 font-mono text-sm text-white/60 hover:text-white transition-colors"
         >
-          [ X ]
+          X
         </button>
 
         {submitted ? (
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-white">
-              [ TRANSMISSION RECEIVED ]
+              TRANSMISSION RECEIVED
             </p>
             <p className="font-mono text-[10px] tracking-wider text-white/50">
               You are now part of the Outworld registry.
@@ -43,7 +43,7 @@ export default function TransmissionModal() {
         ) : (
           <div className="flex flex-col items-center gap-6 text-center">
             <p className="font-mono text-sm md:text-base tracking-[0.3em] uppercase text-white font-bold">
-              [ INCOMING TRANSMISSION ]
+              INCOMING TRANSMISSION
             </p>
             <p className="font-mono text-[10px] tracking-wider text-white/50 leading-relaxed max-w-xs">
               Join the Outworld registry for priority access to future drops and archives.
@@ -53,7 +53,7 @@ export default function TransmissionModal() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="[ ENTER EMAIL ]"
+                placeholder="ENTER EMAIL"
                 required
                 className="bg-transparent border border-white/30 px-4 py-3 font-mono text-[10px] tracking-wider text-white placeholder-white/25 outline-none focus:border-white transition-colors w-full"
               />

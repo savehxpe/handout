@@ -44,7 +44,7 @@ export default function Depth4Social() {
     >
       <div className="pointer-events-auto flex flex-col items-center gap-6">
         <p className="font-mono text-sm md:text-base tracking-[0.3em] uppercase text-white font-bold drop-shadow-lg">
-          [ ESTABLISH SECURE CONNECTION ]
+          ESTABLISH SECURE CONNECTION
         </p>
         <div className="flex flex-row justify-center gap-6 mx-auto max-w-fit">
         {socials.map(({ icon: Icon, label, href }) => (

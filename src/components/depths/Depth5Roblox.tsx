@@ -52,7 +52,7 @@ function Leaderboard() {
     return (
       <div className="flex flex-col gap-2">
         <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white drop-shadow-md">
-          [ TOP 5 LEADERBOARD ]
+          TOP 5 LEADERBOARD
         </span>
         <span className="font-mono text-[10px] text-white/60 drop-shadow-md">
           No entries yet
@@ -64,7 +64,7 @@ function Leaderboard() {
   return (
     <div className="flex flex-col gap-2">
       <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-white drop-shadow-md">
-        [ TOP 5 LEADERBOARD ]
+        TOP 5 LEADERBOARD
       </span>
       {entries.map((e, i) => (
         <div key={i} className="flex justify-between gap-6 font-mono text-[10px] text-white drop-shadow-md">
@@ -118,7 +118,7 @@ function PostGameCapture({ score }: { score: number }) {
             type="text"
             value={tag}
             onChange={(e) => setTag(e.target.value)}
-            placeholder="[ ENTER GAME TAG ]"
+            placeholder="ENTER GAME TAG"
             maxLength={16}
             required
             className="bg-transparent border border-white/30 px-4 py-2 font-mono text-[10px] tracking-wider text-white placeholder-white/25 outline-none focus:border-white transition-colors w-44"
@@ -138,7 +138,7 @@ function PostGameCapture({ score }: { score: number }) {
     return (
       <div className="flex flex-col items-center gap-3 mt-3">
         <p className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg text-center max-w-xs leading-relaxed">
-          [ MANDATORY: CONNECT GOOGLE ACCOUNT TO VERIFY SCORE AND ACCESS DASHBOARD ]
+          MANDATORY: CONNECT GOOGLE ACCOUNT TO VERIFY SCORE AND ACCESS DASHBOARD
         </p>
         <button
           onClick={handleGoogleSignIn}
@@ -153,7 +153,7 @@ function PostGameCapture({ score }: { score: number }) {
 
   return (
     <p className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg mt-3">
-      [ SCORE VERIFIED. RANK SECURED. ]
+      SCORE VERIFIED. RANK SECURED.
     </p>
   );
 }
@@ -292,7 +292,7 @@ function EndlessRunner() {
         ctx.fillStyle = "rgba(255,255,255,0.5)";
         ctx.font = "11px monospace";
         ctx.textAlign = "center";
-        ctx.fillText(`[ GAME OVER - SCORE: ${s.score} ]`, CANVAS_W / 2, 70);
+        ctx.fillText(`GAME OVER - SCORE: ${s.score}`, CANVAS_W / 2, 70);
       }
 
       rafRef.current = requestAnimationFrame(tick);

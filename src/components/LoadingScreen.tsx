@@ -45,7 +45,7 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
       className="fixed inset-0 z-50 bg-black flex items-center justify-center"
     >
       <p className="font-mono text-white text-xl tracking-widest">
-        [ {progress}% ]
+        {progress}%
       </p>
     </div>
   );

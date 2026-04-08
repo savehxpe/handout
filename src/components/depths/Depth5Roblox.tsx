@@ -380,7 +380,7 @@ export default function Depth5Roblox() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 gap-4"
+      className="absolute inset-0 z-[60] flex flex-col items-center justify-center text-center px-4 gap-4 mt-12 md:mt-24 pointer-events-auto"
       style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
     >
       <p className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-white max-w-md drop-shadow-md">

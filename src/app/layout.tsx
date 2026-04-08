@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${mono.variable} h-full`}>
-      <body className="min-h-full bg-black text-white font-mono">
+      <body className="min-h-full bg-black text-white font-mono noise-bg">
         {children}
       </body>
     </html>

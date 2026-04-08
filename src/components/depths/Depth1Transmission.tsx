@@ -8,20 +8,17 @@ export default function Depth1Transmission() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-4"
+      className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-3"
     >
-      <h1 className="font-mono text-4xl md:text-7xl font-bold tracking-tight uppercase text-white">
+      <h1 className="font-mono text-5xl md:text-8xl font-bold tracking-tight uppercase text-white">
         HANDOUT REMIX
       </h1>
-      <h2 className="font-mono text-xl md:text-3xl font-bold tracking-wide uppercase text-white">
+      <h2 className="font-mono text-xl md:text-3xl font-bold tracking-wide uppercase text-white/80">
         FT. FREDDIE GIBBS
       </h2>
-      <p className="font-mono text-[10px] md:text-xs text-white/50 max-w-sm tracking-wider mt-4 leading-relaxed">
-        Handout frequency is bleeding through silence... removing transmission.
-      </p>
-      <p className="font-mono text-[10px] md:text-xs text-white/30 max-w-xs tracking-wider italic leading-relaxed">
-        They want a handout, I gave &apos;em a hand up<br />
-        Built it from the ground, now they don&apos;t understand us
+      <p className="font-mono text-[11px] md:text-sm text-white/40 max-w-xs tracking-wider mt-6 italic leading-relaxed">
+        My moves is silent like airdrop<br />
+        I claim the top spot
       </p>
     </div>
   );

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export default function AudioTrigger() {
-  const audioRef = useRef<HTMLIFrameElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const triggered = useRef(false);
 
   useEffect(() => {
@@ -11,10 +11,10 @@ export default function AudioTrigger() {
       if (triggered.current) return;
       triggered.current = true;
 
-      // Activate the hidden YouTube embed to start audio
-      const iframe = audioRef.current;
-      if (iframe) {
-        iframe.src = iframe.dataset.src + "&autoplay=1";
+      const audio = audioRef.current;
+      if (audio) {
+        audio.volume = 0.3;
+        audio.play().catch(() => {});
       }
 
       window.removeEventListener("click", trigger);
@@ -30,12 +30,11 @@ export default function AudioTrigger() {
   }, []);
 
   return (
-    <iframe
+    <audio
       ref={audioRef}
-      data-src="https://www.youtube-nocookie.com/embed/mX6J6zzARsI?si=F4GTlBlbCUfJo9U0&enablejsapi=1"
-      allow="autoplay; encrypted-media"
-      className="hidden"
-      title="Background audio"
+      src="/audio/ambient.mp3"
+      loop
+      preload="none"
     />
   );
 }

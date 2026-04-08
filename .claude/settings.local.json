@@ -21,7 +21,12 @@
       "Bash(cp -r /tmp/next-init/handout/.gitignore \"/Volumes/T7 Shield 1/Outworld Files/sh3d/\")",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp OK'\\)\")",
+      "Bash(node scripts/convert-frames.mjs)",
+      "Bash(vercel --prod)",
+      "Bash(npm i:*)",
+      "mcp__plugin_vercel_vercel__list_deployments"
     ]
   }
 }

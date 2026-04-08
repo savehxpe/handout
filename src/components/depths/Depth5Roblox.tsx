@@ -110,7 +110,7 @@ function PostGameCapture({ score }: { score: number }) {
   if (phase === "tag") {
     return (
       <div className="flex flex-col items-center gap-3 mt-3">
-        <p className="font-mono text-[10px] tracking-wider text-white/50">
+        <p className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg">
           Good run. Secure your rank.
         </p>
         <form onSubmit={handleTagSubmit} className="flex gap-2">
@@ -137,7 +137,7 @@ function PostGameCapture({ score }: { score: number }) {
   if (phase === "auth") {
     return (
       <div className="flex flex-col items-center gap-3 mt-3">
-        <p className="font-mono text-[10px] tracking-wider text-white/50 text-center max-w-xs leading-relaxed">
+        <p className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg text-center max-w-xs leading-relaxed">
           [ MANDATORY: CONNECT GOOGLE ACCOUNT TO VERIFY SCORE AND ACCESS DASHBOARD ]
         </p>
         <button
@@ -152,7 +152,7 @@ function PostGameCapture({ score }: { score: number }) {
   }
 
   return (
-    <p className="font-mono text-[10px] tracking-wider text-white/40 mt-3">
+    <p className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg mt-3">
       [ SCORE VERIFIED. RANK SECURED. ]
     </p>
   );
@@ -313,58 +313,61 @@ function EndlessRunner() {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      {/* Score + hint bar */}
-      <div className="flex justify-between w-full max-w-[480px] px-1">
-        <span className="font-mono text-[10px] tracking-wider text-white/40">
-          SCORE: {score}
-        </span>
-        <span className="font-mono text-[10px] tracking-wider text-white/40">
-          {gameOver ? "" : "SPACE / TAP TO JUMP"}
-        </span>
-      </div>
-
-      {/* Game + Leaderboard side by side */}
-      <div className="flex flex-col md:flex-row gap-6 items-start">
-        {/* Game container with visual shifts */}
-        <div
-          ref={containerRef}
-          className="relative transition-all duration-700"
-          style={{ filter: invertColors ? "invert(1)" : "none" }}
-        >
-          {/* Score >= 20: subtle dark bg behind canvas */}
-          {showBgImage && (
-            <div
-              className="absolute inset-0 opacity-20 transition-opacity duration-1000"
-              style={{
-                backgroundImage: "url(/frames/frame-060.webp)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-          )}
-          <canvas
-            ref={canvasRef}
-            width={CANVAS_W}
-            height={CANVAS_H}
-            onClick={jump}
-            onTouchStart={jump}
-            className="relative border border-white/20 cursor-pointer max-w-full"
-            style={{ imageRendering: "pixelated" }}
-          />
+      {/* Solid bg container for legibility */}
+      <div className="bg-black p-6 border border-white/30">
+        {/* Score + hint bar */}
+        <div className="flex justify-between w-full max-w-[480px] px-1 mb-2">
+          <span className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg">
+            SCORE: {score}
+          </span>
+          <span className="font-mono text-[10px] tracking-wider text-white drop-shadow-lg">
+            {gameOver ? "" : "SPACE / TAP TO JUMP"}
+          </span>
         </div>
 
-        {/* Leaderboard beside the canvas */}
-        <div className="hidden md:block min-w-[160px]">
+        {/* Game + Leaderboard side by side */}
+        <div className="flex flex-col md:flex-row gap-6 items-start">
+          {/* Game container with visual shifts */}
+          <div
+            ref={containerRef}
+            className="relative transition-all duration-700"
+            style={{ filter: invertColors ? "invert(1)" : "none" }}
+          >
+            {/* Score >= 20: subtle dark bg behind canvas */}
+            {showBgImage && (
+              <div
+                className="absolute inset-0 opacity-20 transition-opacity duration-1000"
+                style={{
+                  backgroundImage: "url(/frames/frame-060.webp)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+            )}
+            <canvas
+              ref={canvasRef}
+              width={CANVAS_W}
+              height={CANVAS_H}
+              onClick={jump}
+              onTouchStart={jump}
+              className="relative border border-white/20 cursor-pointer max-w-full"
+              style={{ imageRendering: "pixelated" }}
+            />
+          </div>
+
+          {/* Leaderboard beside the canvas */}
+          <div className="hidden md:block min-w-[160px]">
+            <Leaderboard />
+          </div>
+        </div>
+
+        {/* Post-game capture */}
+        {gameOver && <PostGameCapture score={score} />}
+
+        {/* Mobile leaderboard below */}
+        <div className="block md:hidden mt-4">
           <Leaderboard />
         </div>
-      </div>
-
-      {/* Post-game capture */}
-      {gameOver && <PostGameCapture score={score} />}
-
-      {/* Mobile leaderboard below */}
-      <div className="block md:hidden mt-4">
-        <Leaderboard />
       </div>
     </div>
   );

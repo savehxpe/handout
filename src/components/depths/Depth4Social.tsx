@@ -40,9 +40,13 @@ export default function Depth4Social() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-30 flex items-center justify-center"
+      className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none"
     >
-      <div className="flex gap-10 md:gap-16 items-center">
+      <div className="relative z-50 pointer-events-auto flex flex-col items-center gap-6">
+        <p className="font-mono text-sm md:text-base tracking-[0.3em] uppercase text-white font-bold drop-shadow-lg">
+          [ ESTABLISH SECURE CONNECTION ]
+        </p>
+        <div className="flex gap-10 md:gap-16 items-center">
         {socials.map(({ icon: Icon, label, href }) => (
           <a
             key={label}
@@ -57,6 +61,7 @@ export default function Depth4Social() {
             </span>
           </a>
         ))}
+        </div>
       </div>
     </div>
   );

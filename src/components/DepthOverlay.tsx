@@ -4,7 +4,6 @@ import Depth1Transmission from "./depths/Depth1Transmission";
 import Depth2PreSave from "./depths/Depth2PreSave";
 import Depth3Video from "./depths/Depth3Video";
 import Depth4Social from "./depths/Depth4Social";
-import Depth5Roblox from "./depths/Depth5Roblox";
 
 export default function DepthOverlay() {
   return (
@@ -13,7 +12,6 @@ export default function DepthOverlay() {
       <Depth2PreSave />
       <Depth3Video />
       <Depth4Social />
-      <Depth5Roblox />
     </div>
   );
 }

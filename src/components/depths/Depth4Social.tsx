@@ -40,7 +40,7 @@ export default function Depth4Social() {
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-50 flex flex-col items-center justify-center pointer-events-none"
+      className="absolute inset-0 z-[70] flex flex-col items-center justify-center pointer-events-none"
     >
       <div className="pointer-events-auto flex flex-col items-center gap-6">
         <p className="font-mono text-sm md:text-base tracking-[0.3em] uppercase text-white font-bold drop-shadow-lg">
@@ -53,6 +53,7 @@ export default function Depth4Social() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="pointer-events-auto flex flex-col items-center gap-3 text-white border border-white/30 px-6 py-5 transition-colors duration-200 hover:bg-white hover:text-black"
           >
             <Icon />

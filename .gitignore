@@ -43,6 +43,9 @@ yarn-error.log*
 # source frame assets (original PNGs, ~12MB each)
 /122 frames/
 
+# python venv for merch scripts
+/.venv-psa/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

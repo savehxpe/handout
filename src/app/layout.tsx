@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { CartProvider } from "@/contexts/CartContext";
+import { DiscountProvider } from "@/contexts/DiscountContext";
+import CartDrawer from "@/components/CartDrawer";
+import DiscountModal from "@/components/DiscountModal";
 
 const mono = JetBrains_Mono({
   variable: "--font-mono",
@@ -21,7 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${mono.variable} h-full`}>
       <body className="min-h-full bg-black text-white font-mono noise-bg">
-        {children}
+        <AuthProvider>
+          <CartProvider>
+            <DiscountProvider>
+              {children}
+              <CartDrawer />
+              <DiscountModal />
+            </DiscountProvider>
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

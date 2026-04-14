@@ -32,6 +32,9 @@ export default function Depth3Video() {
         href="https://youtu.be/mX6J6zzARsI?si=F4GTlBlbCUfJo9U0"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={(e) => {
+          if (!window.confirm('Leave the Outworld to watch on YouTube?')) e.preventDefault();
+        }}
         className="pointer-events-auto relative z-20 mx-auto max-w-3xl w-full aspect-video block group border border-white/20 overflow-hidden"
       >
         <img

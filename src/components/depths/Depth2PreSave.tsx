@@ -26,7 +26,9 @@ export default function Depth2PreSave() {
         </div>
 
         <a
-          href="#"
+          href="https://empire.ffm.to/handout"
+          target="_blank"
+          rel="noopener noreferrer"
           className="pointer-events-auto font-mono text-lg md:text-2xl tracking-[0.15em] uppercase border border-white px-12 py-5 text-white font-bold transition-colors duration-200 hover:bg-white hover:text-black"
         >
           PRE-SAVE TO UNLOCK THE REMIX

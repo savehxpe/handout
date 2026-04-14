@@ -1,3 +1,12 @@
+.git
+node_modules
+.next
+*.mp4
+*.mov
+*.wav
+*.zip
+public/frames/*.png
+public/frames/*.jpg
 122 frames/
 ._*
 scripts/

@@ -26,7 +26,15 @@
       "Bash(node scripts/convert-frames.mjs)",
       "Bash(vercel --prod)",
       "Bash(npm i:*)",
-      "mcp__plugin_vercel_vercel__list_deployments"
+      "mcp__plugin_vercel_vercel__list_deployments",
+      "mcp__plugin_vercel_vercel__get_project",
+      "Bash(npx vercel:*)",
+      "Bash(brew install:*)",
+      "Bash(stripe listen:*)",
+      "Bash(npm ls:*)",
+      "Bash(grep '\"sharp\"' package.json)",
+      "Bash(node optimize-frames.mjs)",
+      "Bash(dot_clean \"/Volumes/T7 Shield 1/Outworld Files/sh3d/public/frames/\")"
     ]
   }
 }

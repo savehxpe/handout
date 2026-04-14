@@ -140,6 +140,8 @@ function ArcadeSection() {
 }
 
 import MerchVault from "./MerchVault";
+import CommunityUnlock from "./CommunityUnlock";
+import PSAMerchArchive from "./PSAMerchArchive";
 
 function MerchSection() {
   return (
@@ -167,6 +169,10 @@ export default function LockedDepths() {
       <MerchSection />
       <SectionDivider label="ARCADE" />
       <ArcadeSection />
+      <SectionDivider label="PSA ARCHIVE" />
+      <PSAMerchArchive />
+      <SectionDivider label="ASCENSION" />
+      <CommunityUnlock />
     </div>
   );
 }
